@@ -1,28 +1,97 @@
 ﻿using System;
+using StudentskiPlanerSneza.Data;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System.Collections.Generic;
+using System.IO;
+using StudentskiPlanerSneza;
 
-namespace StudentskiPlaner_Sneza
+
+
+namespace StudentskiPlanerSneza
 {
     public partial class App : Application
     {
+        static Database database;
+        public static string DbFileName = "tasks.db3";
+
+        public static Database Database
+        {
+            get
+            {
+                if (database == null)
+                {
+                    string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), DbFileName);
+                    database = new Database(dbPath);
+                }
+                return database;
+            }
+        }
+
+
         public App()
         {
+
+
+
+
             InitializeComponent();
 
-            MainPage = new MainPage();
+            var baza = Database;
+
+            Task.Run(async () =>
+            {
+                var postojeZadaci = await baza.GetItemsAsync();
+
+                if (postojeZadaci.Count == 0)
+                {
+                    var zadaci = new List<Models.Zadaci>
+            {
+                new Models.Zadaci
+                {
+                    Naziv = "Učiti za ispit",
+                    Opis = "Spremiti SQL upite",
+                    Datum = DateTime.Now.AddDays(1),
+                    Prioritet = Models.PrioritetZadatka.Visok,
+                    Zavrsen = false,
+                    PodsetnikUkljucen = false
+                },
+                new Models.Zadaci
+                {
+                    Naziv = "Napraviti prezentaciju",
+                    Opis = "Završiti slajdove za seminar",
+                    Datum = DateTime.Now.AddDays(2),
+                    Prioritet = Models.PrioritetZadatka.Srednji,
+                    Zavrsen = false,
+                    PodsetnikUkljucen = true
+                },
+                new Models.Zadaci
+                {
+                    Naziv = "Vežbati kodiranje",
+                    Opis = "Rad na zadacima iz OOP-a",
+                    Datum = DateTime.Now.AddDays(3),
+                    Prioritet = Models.PrioritetZadatka.Nizak,
+                    Zavrsen = true,
+                    PodsetnikUkljucen = false
+                }
+            };
+
+                    foreach (var zad in zadaci)
+                    {
+                        await baza.SaveItemAsync(zad);
+                    }
+                }
+            }).Wait();
+
+            MainPage = new NavigationPage(new MainPage())
+            {
+                BarBackgroundColor = Color.FromHex("#E91E63"),
+                BarTextColor = Color.White
+            };
+
+
         }
 
-        protected override void OnStart()
-        {
-        }
-
-        protected override void OnSleep()
-        {
-        }
-
-        protected override void OnResume()
-        {
-        }
     }
 }

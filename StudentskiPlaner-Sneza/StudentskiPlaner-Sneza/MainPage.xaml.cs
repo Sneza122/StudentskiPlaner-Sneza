@@ -6,13 +6,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace StudentskiPlaner_Sneza
+namespace StudentskiPlanerSneza
 {
-    public partial class MainPage : ContentPage
+    public partial class MainPage : TabbedPage
     {
         public MainPage()
         {
-            InitializeComponent();
+            InitializeComponent();  // Ovaj poziv treba da bude validan
         }
     }
 }

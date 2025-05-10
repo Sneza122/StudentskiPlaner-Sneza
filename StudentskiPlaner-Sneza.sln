@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35931.197 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentskiPlaner-Sneza.Android", "StudentskiPlaner-Sneza\StudentskiPlaner-Sneza.Android\StudentskiPlaner-Sneza.Android.csproj", "{B261A3A4-4BDF-401C-8309-467F626421E0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentskiPlanerSneza.Android", "StudentskiPlaner-Sneza\StudentskiPlaner-Sneza.Android\StudentskiPlanerSneza.Android.csproj", "{B261A3A4-4BDF-401C-8309-467F626421E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentskiPlaner-Sneza.iOS", "StudentskiPlaner-Sneza\StudentskiPlaner-Sneza.iOS\StudentskiPlaner-Sneza.iOS.csproj", "{B6139BCC-36FE-4555-959B-7D9241DB15DD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentskiPlanerSneza.iOS", "StudentskiPlaner-Sneza\StudentskiPlaner-Sneza.iOS\StudentskiPlanerSneza.iOS.csproj", "{B6139BCC-36FE-4555-959B-7D9241DB15DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentskiPlaner-Sneza", "StudentskiPlaner-Sneza\StudentskiPlaner-Sneza\StudentskiPlaner-Sneza.csproj", "{AEC0C605-E30D-4F68-BC5C-D5A00948A70C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentskiPlanerSneza", "StudentskiPlaner-Sneza\StudentskiPlaner-Sneza\StudentskiPlanerSneza.csproj", "{AEC0C605-E30D-4F68-BC5C-D5A00948A70C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

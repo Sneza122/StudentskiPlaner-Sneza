@@ -55,6 +55,9 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="sqlite-net-pcl">
+      <Version>1.9.172</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
   </ItemGroup>
@@ -88,9 +91,9 @@
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\StudentskiPlaner-Sneza\StudentskiPlaner-Sneza.csproj">
-      <Project>{C47032CF-0B8A-4808-A9E9-813C20ABF4CF}</Project>
-      <Name>StudentskiPlaner-Sneza</Name>
+    <ProjectReference Include="..\StudentskiPlaner-Sneza\StudentskiPlanerSneza.csproj">
+      <Project>{AEC0C605-E30D-4F68-BC5C-D5A00948A70C}</Project>
+      <Name>StudentskiPlanerSneza</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
