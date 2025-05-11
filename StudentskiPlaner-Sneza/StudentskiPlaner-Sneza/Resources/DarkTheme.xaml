@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <!-- DARK THEME COLORS -->
+    <Color x:Key="PageBackgroundColor">#121212</Color>
+    <Color x:Key="CardBackgroundColor">#1E1E1E</Color>
+    <Color x:Key="TitleTextColor">#FF4081</Color>
+    <Color x:Key="BodyTextColor">White</Color>
+    <Color x:Key="AccentTextColor">#F06292</Color>
+    <Color x:Key="PrimaryColor">#880E4F</Color>
+    <Color x:Key="ButtonTextColor">White</Color>
+    <Color x:Key="ToolbarBackgroundColor">#880E4F</Color>
+    <!-- svetlo roze -->
+    <Color x:Key="ToolbarItemColor">White</Color>
+
+
+
+</ResourceDictionary>

@@ -5,7 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-namespace StudentskiPlaner_Sneza.iOS
+namespace StudentskiPlanerSneza.iOS
 {
     public class Application
     {

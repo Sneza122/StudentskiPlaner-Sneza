@@ -3,11 +3,20 @@
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:views="clr-namespace:StudentskiPlanerSneza.Views"
             x:Class="StudentskiPlanerSneza.MainPage"
-            BarBackgroundColor="#E91E63"
-            BarTextColor="White">
+            BarBackgroundColor="{DynamicResource ToolbarBackgroundColor}" 
+            BarTextColor="{DynamicResource ToolbarItemColor}">
+
+
+    <TabbedPage.ToolbarItems>
+        <ToolbarItem Text="Tema"
+                     Clicked="OnToggleThemeClicked"
+                     Order="Primary"
+                     Priority="0"  />
+
+    </TabbedPage.ToolbarItems>
 
     <views:DnevniZadaciPage Title="Dnevni zadaci" />
     <views:IspitiPage Title="Ispiti" />
     <views:BeleskePage Title="Beleške" />
-    <!-- Dodaj još dve stranice kada ih napraviš -->
+
 </TabbedPage>

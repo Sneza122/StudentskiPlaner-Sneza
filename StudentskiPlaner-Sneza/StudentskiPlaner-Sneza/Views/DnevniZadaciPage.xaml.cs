@@ -4,6 +4,8 @@ using System;
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 using StudentskiPlanerSneza.Data;
 using StudentskiPlanerSneza.Models;
+using FormsApp = Xamarin.Forms.Application;
+
 
 namespace StudentskiPlanerSneza.Views
 {
@@ -68,16 +70,20 @@ namespace StudentskiPlanerSneza.Views
         }
         private async void OnAddTaskClicked(object sender, EventArgs e)
         {
-            var novaStrana = new AddTaskPage(null); // null znači kreiramo novi zadatak
+            var novaStrana = new AddTaskPage(null); 
 
             novaStrana.TaskSaved += async (s, args) =>
             {
-                await _database.SaveItemAsync(novaStrana.Zadatak); // čuvamo novi zadatak
-                LoadTasks(); // osvežavamo prikaz liste
+                await _database.SaveItemAsync(novaStrana.Zadatak); 
+                LoadTasks(); 
             };
 
-            await Navigation.PushAsync(novaStrana); // otvaramo formu
+            await Navigation.PushAsync(novaStrana);
         }
+        bool isDarkMode = false;
+
+       
+
 
 
 

@@ -6,13 +6,19 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace StudentskiPlanerSneza
+namespace StudentskiPlanerSneza 
 {
     public partial class MainPage : TabbedPage
     {
         public MainPage()
         {
-            InitializeComponent();  // Ovaj poziv treba da bude validan
+            InitializeComponent();
+        }
+
+        private void OnToggleThemeClicked(object sender, EventArgs e)
+        {
+            App.IsDarkTheme = !App.IsDarkTheme;
+            App.ApplyTheme(App.IsDarkTheme);
         }
     }
 }

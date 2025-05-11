@@ -1,11 +1,14 @@
 ﻿using System;
+using StudentskiPlanerSneza;
 using StudentskiPlanerSneza.Data;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using System.Collections.Generic;
 using System.IO;
-using StudentskiPlanerSneza;
+
+
+
 
 
 
@@ -28,6 +31,36 @@ namespace StudentskiPlanerSneza
                 return database;
             }
         }
+        private static ResourceDictionary LightTheme = new ResourceDictionary
+    {
+        { "PageBackgroundColor", Color.White },
+        { "CardBackgroundColor", Color.FromHex("#EEEEEE") },
+        { "TitleTextColor", Color.FromHex("#C2185B") },
+        { "BodyTextColor", Color.Black },
+        { "AccentTextColor", Color.Red },
+        { "PrimaryColor", Color.FromHex("#E91E63") },
+        { "ButtonTextColor", Color.White },
+        { "ToolbarBackgroundColor", Color.FromHex("#F8BBD0") }, 
+
+        { "ToolbarItemColor", Color.FromHex("#000000") } 
+};
+
+
+        private static ResourceDictionary DarkTheme = new ResourceDictionary
+    {
+        { "PageBackgroundColor", Color.FromHex("#121212") },
+        { "CardBackgroundColor", Color.FromHex("#1E1E1E") },
+        { "TitleTextColor", Color.FromHex("#FF4081") },
+        { "BodyTextColor", Color.White },
+        { "AccentTextColor", Color.FromHex("#F06292") },
+        { "PrimaryColor", Color.FromHex("#880E4F") },
+        { "ButtonTextColor", Color.White },
+        { "ToolbarBackgroundColor", Color.FromHex("#880E4F") },
+        { "ToolbarItemColor", Color.FromHex("#FFFFFF") }
+    };
+
+        public static bool IsDarkTheme = false;
+
 
 
         public App()
@@ -37,6 +70,10 @@ namespace StudentskiPlanerSneza
 
 
             InitializeComponent();
+            ApplyTheme(IsDarkTheme);
+           
+
+
 
             var baza = Database;
 
@@ -86,12 +123,29 @@ namespace StudentskiPlanerSneza
 
             MainPage = new NavigationPage(new MainPage())
             {
-                BarBackgroundColor = Color.FromHex("#E91E63"),
-                BarTextColor = Color.White
+                BarBackgroundColor = (Color)Application.Current.Resources["ToolbarBackgroundColor"],
+                BarTextColor = (Color)Application.Current.Resources["ToolbarItemColor"]
             };
 
 
+
         }
+        public static void ApplyTheme(bool darkMode)
+        {
+            Application.Current.Resources.MergedDictionaries.Clear();
+
+            if (darkMode)
+                Application.Current.Resources.MergedDictionaries.Add(DarkTheme);
+            else
+                Application.Current.Resources.MergedDictionaries.Add(LightTheme);
+        }
+
+
+
+
+
+
+
 
     }
 }
